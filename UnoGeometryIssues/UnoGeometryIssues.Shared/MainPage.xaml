@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="UnoGeometryIssues.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnoGeometryIssues"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+    </Page.Resources>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="LayoutStates">
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <StateTrigger IsActive="{x:Bind VM.IsReduced, Mode=OneWay}"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ellipse.Style" Value="{StaticResource SmallButtonEllipseStyle}" />
+                        <Setter Target="displayText.Style" Value="{StaticResource SmallButtonTextStyle}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Grid HorizontalAlignment="Center">
+                <Ellipse x:Name="ellipse" Style="{StaticResource ButtonEllipseStyle}"/>
+                <TextBlock x:Name="displayText" Text="My Name"
+                           Style="{StaticResource ButtonTextStyle}"/>
+            </Grid>
+            <Rectangle Width="64" Height="20" Fill="Transparent" StrokeThickness="0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="0,24,0,24" HorizontalAlignment="Center">
+            <Button Click="Button_Click" >Click Me</Button>
+        </StackPanel>
+    </Grid>
+</Page>
