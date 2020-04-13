@@ -30,7 +30,7 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="CornflowerBlue">
             <Grid HorizontalAlignment="Center">
                 <Ellipse x:Name="ellipse" Style="{StaticResource ButtonEllipseStyle}"/>
                 <TextBlock x:Name="displayText" Text="My Name"
