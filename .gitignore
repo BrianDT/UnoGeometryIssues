@@ -2,7 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/UnoGeometryIssues/v16
+/.vs
 /Framework.Helpers/bin
 /Framework.Helpers/obj
 /Framework.Uno/bin
@@ -21,4 +21,4 @@
 /ViewModels/obj
 /UnoGeometryIssues/UnoGeometryIssues.Wasm/UnoGeometryIssues.Wasm.csproj.user
 /UnoGeometryIssues/UnoGeometryIssues.iOS/obj
-/.vs/UnoGeometryIssues/config
+
