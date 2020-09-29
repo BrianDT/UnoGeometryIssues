@@ -21,4 +21,5 @@
 /ViewModels/obj
 /UnoGeometryIssues/UnoGeometryIssues.Wasm/UnoGeometryIssues.Wasm.csproj.user
 /UnoGeometryIssues/UnoGeometryIssues.iOS/obj
-
+/UnoGeometryIssues/UnoGeometryIssues.iOS/bin
+/UnoGeometryIssues/UnoGeometryIssues.iOS/UnoGeometryIssues.iOS.csproj.user
