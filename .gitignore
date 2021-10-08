@@ -3,23 +3,7 @@
 ################################################################################
 
 /.vs
-/Framework.Helpers/bin
-/Framework.Helpers/obj
-/Framework.Uno/bin
-/Framework.Uno/obj
-/FrameworkInterfaces/bin
-/FrameworkInterfaces/obj
-/UnoGeometryIssues/UnoGeometryIssues.Droid/bin
-/UnoGeometryIssues/UnoGeometryIssues.Droid/obj
-/UnoGeometryIssues/UnoGeometryIssues.UWP/bin
-/UnoGeometryIssues/UnoGeometryIssues.UWP/obj
-/UnoGeometryIssues/UnoGeometryIssues.Wasm/bin
-/UnoGeometryIssues/UnoGeometryIssues.Wasm/obj
-/ViewModelInterfaces/bin
-/ViewModelInterfaces/obj
-/ViewModels/bin
-/ViewModels/obj
-/UnoGeometryIssues/UnoGeometryIssues.Wasm/UnoGeometryIssues.Wasm.csproj.user
-/UnoGeometryIssues/UnoGeometryIssues.iOS/obj
-/UnoGeometryIssues/UnoGeometryIssues.iOS/bin
-/UnoGeometryIssues/UnoGeometryIssues.iOS/UnoGeometryIssues.iOS.csproj.user
+bin/
+obj/
+*.user
+
