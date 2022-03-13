@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30002.166
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UnoGeometryIssues.Shared", "UnoGeometryIssues\UnoGeometryIssues.Shared\UnoGeometryIssues.Shared.shproj", "{6279C845-92F8-4333-AB99-3D213163593C}"
 EndProject
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoGeometryIssues.iOS", "Un
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoGeometryIssues.UWP", "UnoGeometryIssues\UnoGeometryIssues.UWP\UnoGeometryIssues.UWP.csproj", "{A9698AC5-E428-4772-A533-EE17208EB77E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoGeometryIssues.Wasm", "UnoGeometryIssues\UnoGeometryIssues.Wasm\UnoGeometryIssues.Wasm.csproj", "{6296D452-F6F9-482C-BB9B-DE5D1AA38F91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnoGeometryIssues.Wasm", "UnoGeometryIssues\UnoGeometryIssues.Wasm\UnoGeometryIssues.Wasm.csproj", "{6296D452-F6F9-482C-BB9B-DE5D1AA38F91}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{257F7519-27B7-4765-A101-2DAF78C05757}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,13 +23,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModel", "ViewModel", "{620A6EAC-2FDE-4B35-A6AF-DB658475DC94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "ViewModels\ViewModels.csproj", "{DDAEC9D8-9F71-4225-BC2D-20376E2BFDF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModels", "ViewModels\ViewModels.csproj", "{DDAEC9D8-9F71-4225-BC2D-20376E2BFDF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModelInterfaces", "ViewModelInterfaces\ViewModelInterfaces.csproj", "{4A7B143A-C979-4618-BE52-4E3C45112260}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModelInterfaces", "ViewModelInterfaces\ViewModelInterfaces.csproj", "{4A7B143A-C979-4618-BE52-4E3C45112260}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameworkInterfaces", "FrameworkInterfaces\FrameworkInterfaces.csproj", "{E5EA1BDB-8D87-420C-8D70-9CA732066989}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrameworkInterfaces", "FrameworkInterfaces\FrameworkInterfaces.csproj", "{E5EA1BDB-8D87-420C-8D70-9CA732066989}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Helpers", "Framework.Helpers\Framework.Helpers.csproj", "{5A5ECE32-813E-4DA0-BF36-BD4A5CB9F149}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Helpers", "Framework.Helpers\Framework.Helpers.csproj", "{5A5ECE32-813E-4DA0-BF36-BD4A5CB9F149}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Uno", "Framework.Uno\Framework.Uno.csproj", "{BE415A83-C8F6-4CC1-88CA-7F109C54E3D7}"
 EndProject
@@ -160,6 +160,7 @@ Global
 		{CDCA4662-839C-498E-BEF7-83544056C163}.Debug|ARM.ActiveCfg = Debug|iPhone
 		{CDCA4662-839C-498E-BEF7-83544056C163}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{CDCA4662-839C-498E-BEF7-83544056C163}.Debug|iPhone.Build.0 = Debug|iPhone
+		{CDCA4662-839C-498E-BEF7-83544056C163}.Debug|iPhone.Deploy.0 = Debug|iPhone
 		{CDCA4662-839C-498E-BEF7-83544056C163}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{CDCA4662-839C-498E-BEF7-83544056C163}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{CDCA4662-839C-498E-BEF7-83544056C163}.Debug|x64.ActiveCfg = Debug|iPhone

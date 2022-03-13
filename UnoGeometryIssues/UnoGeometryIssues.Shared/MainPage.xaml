@@ -30,13 +30,14 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="CornflowerBlue">
-            <Grid HorizontalAlignment="Center">
-                <Ellipse x:Name="ellipse" Style="{StaticResource ButtonEllipseStyle}"/>
+        <StackPanel x:Name="dynamicPanel" Orientation="Horizontal" HorizontalAlignment="Center" Background="CornflowerBlue">
+            <Grid x:Name="dynamicContainer" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="LightSkyBlue">
+                <Ellipse x:Name="ellipse" Style="{StaticResource ButtonEllipseStyle}"
+                         SizeChanged="Ellipse_SizeChanged"/>
                 <TextBlock x:Name="displayText" Text="My Name"
                            Style="{StaticResource ButtonTextStyle}"/>
             </Grid>
-            <Rectangle Width="64" Height="20" Fill="Transparent" StrokeThickness="0"/>
+            <Rectangle Width="64" Height="20" Fill="LightBlue" StrokeThickness="0"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Margin="0,24,0,24" HorizontalAlignment="Center">

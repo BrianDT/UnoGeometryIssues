@@ -151,6 +151,9 @@ namespace UnoGeometryIssues
                 builder.AddFilter("Windows", LogLevel.Warning);
                 builder.AddFilter("Microsoft", LogLevel.Warning);
 
+                builder.AddFilter("UnoGeometryIssues", LogLevel.Information);
+                builder.AddFilter("Vssl", LogLevel.Information);
+
                 // Generic Xaml events
                 // builder.AddFilter("Windows.UI.Xaml", LogLevel.Debug );
                 // builder.AddFilter("Windows.UI.Xaml.VisualStateGroup", LogLevel.Debug );
