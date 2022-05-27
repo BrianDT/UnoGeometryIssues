@@ -10,7 +10,7 @@
     <Page.Resources>
     </Page.Resources>
     
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid x:Name="mainGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -31,11 +31,13 @@
         </VisualStateManager.VisualStateGroups>
 
         <StackPanel x:Name="dynamicPanel" Orientation="Horizontal" HorizontalAlignment="Center" Background="CornflowerBlue">
-            <Grid x:Name="dynamicContainer" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="LightSkyBlue">
+            <Grid x:Name="dynamicContainer" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="LightSkyBlue"
+                  SizeChanged="Container_SizeChanged">
                 <Ellipse x:Name="ellipse" Style="{StaticResource ButtonEllipseStyle}"
                          SizeChanged="Ellipse_SizeChanged"/>
                 <TextBlock x:Name="displayText" Text="My Name"
-                           Style="{StaticResource ButtonTextStyle}"/>
+                           Style="{StaticResource ButtonTextStyle}"
+                           SizeChanged="Button_SizeChanged"/>
             </Grid>
             <Rectangle Width="64" Height="20" Fill="LightBlue" StrokeThickness="0"/>
         </StackPanel>
