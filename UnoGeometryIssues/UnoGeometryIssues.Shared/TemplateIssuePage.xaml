@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="UnoGeometryIssues.Shared.TemplateIssuePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnoGeometryIssues.Shared"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Click="Back_Click" Margin="12">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Border BorderThickness="1" CornerRadius="2" Padding="4" Background="AliceBlue">
+                            <SymbolIcon Symbol="Back" Foreground="Black"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+
+        <StackPanel x:Name="dynamicPanel" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Background="CornflowerBlue"
+                    Margin="0,0,0,60">
+                <Button Click="Button_Click" >
+                    <Button.Template>
+                    <ControlTemplate>
+                        <Grid x:Name="dynamicContainer" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="LightSkyBlue">
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="LayoutStates">
+                                    <VisualState>
+                                        <VisualState.StateTriggers>
+                                            <StateTrigger IsActive="{Binding IsReduced, Mode=OneWay}"/>
+                                        </VisualState.StateTriggers>
+                                        <VisualState.Setters>
+                                            <Setter Target="ellipse.Style" Value="{StaticResource SmallButtonEllipseStyle}" />
+                                            <Setter Target="displayText.Style" Value="{StaticResource SmallButtonTextStyle}" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Ellipse x:Name="ellipse" Style="{StaticResource ButtonEllipseStyle}"/>
+                            <TextBlock x:Name="displayText" Text="Click Me"
+                                       Style="{StaticResource ButtonTextStyle}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Rectangle Width="64" Height="20" Fill="LightBlue" StrokeThickness="0"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

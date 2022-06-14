@@ -9,41 +9,13 @@
 
     <Page.Resources>
     </Page.Resources>
-    
-    <Grid x:Name="mainGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
 
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="LayoutStates">
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <StateTrigger IsActive="{x:Bind VM.IsReduced, Mode=OneWay}"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="ellipse.Style" Value="{StaticResource SmallButtonEllipseStyle}" />
-                        <Setter Target="displayText.Style" Value="{StaticResource SmallButtonTextStyle}" />
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-
-        <StackPanel x:Name="dynamicPanel" Orientation="Horizontal" HorizontalAlignment="Center" Background="CornflowerBlue">
-            <Grid x:Name="dynamicContainer" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="LightSkyBlue"
-                  SizeChanged="Container_SizeChanged">
-                <Ellipse x:Name="ellipse" Style="{StaticResource ButtonEllipseStyle}"
-                         SizeChanged="Ellipse_SizeChanged"/>
-                <TextBlock x:Name="displayText" Text="My Name"
-                           Style="{StaticResource ButtonTextStyle}"
-                           SizeChanged="Button_SizeChanged"/>
-            </Grid>
-            <Rectangle Width="64" Height="20" Fill="LightBlue" StrokeThickness="0"/>
-        </StackPanel>
-
+    <Grid>
         <StackPanel Grid.Row="1" Margin="0,24,0,24" HorizontalAlignment="Center">
-            <Button Click="Button_Click" >Click Me</Button>
+            <Button Click="Issue_Click" >Issue Page</Button>
+            <Button Click="WorkAround_Click" Margin="0,12,0,0">WASM Work Around Page</Button>
+            <Button Click="TemplateIssue_Click" Margin="0,12,0,0">Template Issue Page</Button>
+            <Button Click="TemplateWorkAround_Click" Margin="0,12,0,0">WASM Template WorkAround Page</Button>
         </StackPanel>
     </Grid>
 </Page>
