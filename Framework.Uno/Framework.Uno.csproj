@@ -1,23 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="MSBuild.Sdk.Extras/3.0.23">
-	<!--
-	Adding project references to this project requires some manual adjustments.
-	Please see https://github.com/unoplatform/uno/issues/3909 for more details.
-	-->
   <PropertyGroup>
-    <TargetFrameworks>uap10.0.18362;netstandard2.0;xamarinios10;monoandroid11.0</TargetFrameworks>
-	<!-- Ensures the .xr.xml files are generated in a proper layout folder -->
-    <GenerateLibraryLayout>true</GenerateLibraryLayout>
-    <RootNamespace>Vssl.Samples.Framework</RootNamespace>
-    <AssemblyName>Vssl.Samples.Framework.Uno</AssemblyName>
+	  <TargetFrameworks>net6.0;net6.0-android;net6.0-ios;net6.0-windows10.0.19041.0</TargetFrameworks>
+	  <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+	  <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+	  <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+	  <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+	  <RootNamespace>Vssl.Samples.Framework</RootNamespace>
+      <AssemblyName>Vssl.Samples.Framework.Uno</AssemblyName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+  <PropertyGroup Condition="'$(TargetFramework)'=='net6.0'">
     <DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)'!='uap10.0.18362'">
-    <PackageReference Include="Uno.UI" Version="4.4.13" />
+  <ItemGroup Condition="'$(TargetFramework)'!='net6.0-windows10.0.19041.0'">
+    <PackageReference Include="Uno.WinUI" Version="4.4.13" />
   </ItemGroup>
-  <ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)'=='net6.0-windows10.0.19041.0'">
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.4" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.1" />
+	</ItemGroup>
+
+	<ItemGroup>
     <Page Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
     <Compile Update="**\*.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>

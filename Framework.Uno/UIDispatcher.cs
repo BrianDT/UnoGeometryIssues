@@ -9,7 +9,7 @@ namespace Vssl.Samples.Framework
     using System.Threading.Tasks;
     using Vssl.Samples.FrameworkInterfaces;
     using Windows.UI.Core;
-    using Windows.UI.Xaml;
+    using Microsoft.UI.Xaml;
 
     /// <summary>
     /// A UWP platform specific implementation of the UI Dispatcher facade

@@ -9,13 +9,11 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Navigation;
+using LA = Microsoft.UI.Xaml;
+using WUI = Microsoft.UI.Xaml;
 
 namespace UnoGeometryIssues
 {
@@ -24,7 +22,11 @@ namespace UnoGeometryIssues
     /// </summary>
     sealed partial class App : Application
     {
-        private Window _window;
+#if NET6_0 && WINDOWS
+        private Window window;
+#else
+        private WUI.Window window;
+#endif
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -45,7 +47,7 @@ namespace UnoGeometryIssues
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="args">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs args)
+        protected override void OnLaunched(LA.LaunchActivatedEventArgs args)
         {
 #if DEBUG
 			if (System.Diagnostics.Debugger.IsAttached)
@@ -54,14 +56,23 @@ namespace UnoGeometryIssues
 			}
 #endif
 
-#if NET5_0 && WINDOWS
-            _window = new Window();
-            _window.Activate();
+#if NET6_0 && WINDOWS
+            this.window = new Window();
+            this.window.Activate();
 #else
-            _window = Windows.UI.Xaml.Window.Current;
+            this.window = WUI.Window.Current;
+#endif
+#if NET6_0 || HAS_UNO
+            var previousExecutionState = args.UWPLaunchActivatedEventArgs.PreviousExecutionState;
+#if !(NET6_0 && WINDOWS)
+            var prelaunchActivated = args.UWPLaunchActivatedEventArgs.PrelaunchActivated;
+#endif
+#else
+            var previousExecutionState = args.PreviousExecutionState;
+            var prelaunchActivated = args.PrelaunchActivated;
 #endif
 
-            Frame rootFrame = _window.Content as Frame;
+            Frame rootFrame = this.window.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -77,17 +88,17 @@ namespace UnoGeometryIssues
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                if (previousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
                 }
 
                 // Place the frame in the current Window
-                _window.Content = rootFrame;
+                this.window.Content = rootFrame;
             }
 
-#if !(NET5_0 && WINDOWS)
-            if (args.PrelaunchActivated == false)
+#if !(NET6_0 && WINDOWS)
+            if (prelaunchActivated == false)
 #endif
             {
                 if (rootFrame.Content == null)
@@ -98,7 +109,7 @@ namespace UnoGeometryIssues
                     rootFrame.Navigate(typeof(MainPage), args.Arguments);
                 }
                 // Ensure the current window is active
-                _window.Activate();
+                this.window.Activate();
             }
         }
 
@@ -137,7 +148,7 @@ namespace UnoGeometryIssues
                 builder.AddProvider(new global::Uno.Extensions.Logging.WebAssembly.WebAssemblyConsoleLoggerProvider());
 #elif __IOS__
                 builder.AddProvider(new global::Uno.Extensions.Logging.OSLogLoggerProvider());
-#elif NETFX_CORE
+#elif NETFX_CORE || WINDOWS
                 builder.AddDebug();
 #else
                 builder.AddConsole();
