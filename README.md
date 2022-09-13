@@ -8,6 +8,6 @@ Confirmed as resolved in Uno.UI 3.0.17
 
 2) Under WASM when the Ellipse resizes the surrounding stackpanel does not resize.
 Reported as issue #2983
-Confirmed still present in Uno.UI 4.4.13
-Converted to net6 still an issue
+Converted to net6
+Confirmed as resolved in Uno.UI 4.5.9
 https://github.com/unoplatform/uno/issues/2983
