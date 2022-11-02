@@ -3,8 +3,10 @@ namespace Vssl.Samples.ViewModels
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Text;
 
+    [Bindable(bindable: true)]
     public class MainViewModel : BaseViewModel
     {
         /// <summary>
