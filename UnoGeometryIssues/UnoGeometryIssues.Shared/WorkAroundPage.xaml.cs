@@ -1,4 +1,5 @@
-﻿
+﻿// <copyright file="WorkAroundPage.xaml.cs" company="Visual Software Systems Ltd.">Copyright (c) 2022 All rights reserved</copyright>
+
 namespace UnoGeometryIssues.Shared
 {
     using System;
@@ -7,13 +8,13 @@ namespace UnoGeometryIssues.Shared
     using System.Linq;
     using System.Runtime.InteropServices.WindowsRuntime;
     using Microsoft.Extensions.Logging;
+    using Microsoft.UI.Xaml;
+    using Microsoft.UI.Xaml.Controls;
     using Uno.Extensions;
     using Vssl.Samples.Framework;
     using Vssl.Samples.ViewModels;
     using Windows.Foundation;
     using Windows.Foundation.Collections;
-    using Microsoft.UI.Xaml;
-    using Microsoft.UI.Xaml.Controls;
 
     // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
     /// <summary>
@@ -70,7 +71,6 @@ namespace UnoGeometryIssues.Shared
             this.Log().LogInformation($"Button Clicked");
 #endif
         }
-
 
         /// <summary>
         /// Event handler for container size change.

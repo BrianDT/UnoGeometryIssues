@@ -1,4 +1,5 @@
-﻿
+﻿// <copyright file="MainViewModel.cs" company="Visual Software Systems Ltd.">Copyright (c) 2020 - 2022 All rights reserved</copyright>
+
 namespace Vssl.Samples.ViewModels
 {
     using System;
@@ -6,6 +7,9 @@ namespace Vssl.Samples.ViewModels
     using System.ComponentModel;
     using System.Text;
 
+    /// <summary>
+    /// The main view model for the app.
+    /// </summary>
     [Bindable(bindable: true)]
     public class MainViewModel : BaseViewModel
     {

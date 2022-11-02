@@ -1,17 +1,18 @@
-﻿namespace UnoGeometryIssues.Shared
+﻿// <copyright file="IssuePage.xaml.cs" company="Visual Software Systems Ltd.">Copyright (c) 2022 All rights reserved</copyright>
+
+namespace UnoGeometryIssues.Shared
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Runtime.InteropServices.WindowsRuntime;
-    using Uno.Extensions;
+    using Microsoft.UI.Xaml;
+    using Microsoft.UI.Xaml.Controls;
     using Vssl.Samples.Framework;
     using Vssl.Samples.ViewModels;
     using Windows.Foundation;
     using Windows.Foundation.Collections;
-    using Microsoft.UI.Xaml;
-    using Microsoft.UI.Xaml.Controls;
 
     // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 

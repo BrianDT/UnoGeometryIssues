@@ -9,11 +9,11 @@ namespace UnoGeometryIssues
     using System.Runtime.InteropServices.WindowsRuntime;
     using System.Threading;
     using System.Threading.Tasks;
+    using Microsoft.UI.Xaml;
+    using Microsoft.UI.Xaml.Controls;
     using UnoGeometryIssues.Shared;
     using Windows.Foundation;
     using Windows.Foundation.Collections;
-    using Microsoft.UI.Xaml;
-    using Microsoft.UI.Xaml.Controls;
 
     // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
