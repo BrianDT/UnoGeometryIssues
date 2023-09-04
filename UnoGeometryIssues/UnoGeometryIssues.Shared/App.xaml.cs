@@ -24,7 +24,7 @@ namespace UnoGeometryIssues
     /// </summary>
     public sealed partial class App : Application
     {
-#if NET6_0 && WINDOWS
+#if NET7_0 && WINDOWS
         private Window window;
 #else
         private WUI.Window window;
@@ -58,15 +58,15 @@ namespace UnoGeometryIssues
             }
 #endif
 
-#if NET6_0 && WINDOWS
+#if NET7_0 && WINDOWS
             this.window = new Window();
             this.window.Activate();
 #else
             this.window = WUI.Window.Current;
 #endif
-#if NET6_0 || HAS_UNO
+#if NET7_0 || HAS_UNO
             var previousExecutionState = args.UWPLaunchActivatedEventArgs.PreviousExecutionState;
-#if !(NET6_0 && WINDOWS)
+#if !(NET7_0 && WINDOWS)
             var prelaunchActivated = args.UWPLaunchActivatedEventArgs.PrelaunchActivated;
 #endif
 #else
@@ -99,7 +99,7 @@ namespace UnoGeometryIssues
                 this.window.Content = rootFrame;
             }
 
-#if !(NET6_0 && WINDOWS)
+#if !(NET7_0 && WINDOWS)
             if (prelaunchActivated == false)
 #endif
             {

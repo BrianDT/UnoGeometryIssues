@@ -1,25 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="MSBuild.Sdk.Extras/3.0.23">
-  <PropertyGroup>
-	  <TargetFrameworks>net6.0;net6.0-android;net6.0-ios;net6.0-windows10.0.19041.0</TargetFrameworks>
-	  <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
-	  <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-	  <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
-	  <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+	  <TargetFrameworks>net7.0;net7.0-android;net7.0-ios;net7.0-windows10.0.19041.0</TargetFrameworks>
 	  <RootNamespace>Vssl.Samples.Framework</RootNamespace>
       <AssemblyName>Vssl.Samples.Framework.Uno</AssemblyName>
 	  <CodeAnalysisRuleSet>..\Vssl.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)'=='net6.0'">
+  <PropertyGroup Condition="'$(TargetFramework)'=='net7.0'">
     <DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)'!='net6.0-windows10.0.19041.0'">
-    <PackageReference Include="Uno.WinUI" Version="4.5.9" />
+  <ItemGroup Condition="'$(TargetFramework)'!='net7.0-windows10.0.19041.0'">
+    <PackageReference Include="Uno.WinUI" />
   </ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)'=='net6.0-windows10.0.19041.0'">
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.4" />
-		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.1" />
-		<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+	<ItemGroup Condition="'$(TargetFramework)'=='net7.0-windows10.0.19041.0'">
+		<PackageReference Include="Microsoft.WindowsAppSDK" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
+		<PackageReference Include="StyleCop.Analyzers" >
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
